@@ -1,6 +1,6 @@
-# 📌 Coupons Management API – Monk Commerce Backend Task
+#  Coupons Management API – Monk Commerce Backend Task
 
-## 🚀 Overview
+##  Overview
 
 This project implements a RESTful API to manage and apply discount coupons for an e-commerce platform.
 
@@ -16,7 +16,7 @@ The system is designed to be easily extensible for adding new coupon types in th
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - Java 17
 - Spring Boot
@@ -26,7 +26,7 @@ The system is designed to be easily extensible for adding new coupon types in th
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
 Layered Architecture:
 
@@ -37,9 +37,9 @@ Layered Architecture:
 
 ---
 
-## ✅ Implemented Coupon Types
+##  Implemented Coupon Types
 
-### 1️⃣ Cart-wise Coupons
+### 1: Cart-wise Coupons
 
 - Condition: Cart total exceeds a threshold
 - Discount: Percentage applied to entire cart
@@ -49,7 +49,7 @@ Layered Architecture:
 
 ---
 
-### 2️⃣ Product-wise Coupons
+### 2: Product-wise Coupons
 
 - Condition: Specific product exists in cart
 - Discount: Percentage applied only to that product
@@ -59,7 +59,7 @@ Layered Architecture:
 
 ---
 
-### 3️⃣ Buy X Get Y (BXGY)
+### 3: Buy X Get Y (BXGY)
 
 - Condition: Buy X quantity of Product A
 - Reward: Get Y quantity of Product B free
@@ -71,7 +71,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## 🔗 API Endpoints
+##  API Endpoints
 
 ### Coupon APIs
 
@@ -107,7 +107,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## 🧠 Edge Cases Considered
+##  Edge Cases Considered
 
 - Null checks for coupon parameters
 - Coupon not found handling
@@ -119,7 +119,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## ⚠ Assumptions
+##  Assumptions
 
 - Only one coupon can be applied at a time
 - Prices are always positive
@@ -130,7 +130,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## ❌ Unimplemented Cases (Due to Time Constraints)
+##  Unimplemented Cases (Due to Time Constraints)
 
 - Category-based coupons
 - Coupon stacking
@@ -145,7 +145,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 - Implement Strategy Pattern for better extensibility
 - Add global exception handling
@@ -159,7 +159,7 @@ Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-## 🧪 How to Run
+##  How to Run
 
 ```bash
 mvn clean install

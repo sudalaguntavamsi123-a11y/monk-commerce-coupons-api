@@ -38,6 +38,15 @@ public class CouponController {
         return service.getCoupon(id);
     }
 
+    // ================== UPDATE ==================
+    @PutMapping("/{id}")
+    public Coupon updateCoupon(
+            @PathVariable Long id,
+            @RequestBody Coupon coupon) {
+
+        return service.updateCoupon(id, coupon);
+    }
+
     // ================== DELETE ==================
     @DeleteMapping("/{id}")
     public void deleteCoupon(@PathVariable Long id) {

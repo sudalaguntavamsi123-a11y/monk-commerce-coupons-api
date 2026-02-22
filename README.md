@@ -1,6 +1,6 @@
-# Coupons Management API – Monk Commerce Backend Task
+# 📌 Coupons Management API – Monk Commerce Backend Task
 
-##  Overview
+## 🚀 Overview
 
 This project implements a RESTful API to manage and apply discount coupons for an e-commerce platform.
 
@@ -12,11 +12,11 @@ The system supports:
 - Fetching applicable coupons
 - Applying a specific coupon to a cart
 
-The system is designed to allow easy addition of new coupon types in the future.
+The system is designed to be easily extensible for adding new coupon types in the future.
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - Java 17
 - Spring Boot
@@ -26,68 +26,80 @@ The system is designed to allow easy addition of new coupon types in the future.
 
 ---
 
-##  Architecture
+## 🏗 Architecture
 
 Layered Architecture:
 
-- Controller Layer – Handles API requests
-- Service Layer – Contains business logic
-- Repository Layer – Database access
-- DTO Layer – Request/Response objects
+- **Controller Layer** – Handles API requests
+- **Service Layer** – Contains business logic
+- **Repository Layer** – Handles database access
+- **DTO Layer** – Request/Response models
 
 ---
 
-##  Implemented Coupon Types
+## ✅ Implemented Coupon Types
 
-###  Cart-wise Coupons
+### 1️⃣ Cart-wise Coupons
 
-- Condition: Cart total exceeds a defined threshold
-- Discount: Percentage applied on entire cart total
+- Condition: Cart total exceeds a threshold
+- Discount: Percentage applied to entire cart
 
-**Example:**
+**Example:**  
 10% discount on cart total above 100
 
 ---
 
-###  Product-wise Coupons
+### 2️⃣ Product-wise Coupons
 
 - Condition: Specific product exists in cart
 - Discount: Percentage applied only to that product
 
-**Example:**
+**Example:**  
 20% discount on Product ID 1
 
 ---
 
-###  Buy X Get Y (BXGY)
+### 3️⃣ Buy X Get Y (BXGY)
 
 - Condition: Buy X quantity of Product A
 - Reward: Get Y quantity of Product B free
 - Supports repetition logic
 - Discount calculated based on free product price
 
-**Example:**
+**Example:**  
 Buy 2 of Product 1 → Get 1 of Product 2 free
 
 ---
 
-// Applicable Coupons API
+## 🔗 API Endpoints
 
-**Endpoint:**
-POST /coupons/applicable
+### Coupon APIs
 
-Returns:
+- `POST /coupons` → Create coupon  
+- `GET /coupons` → Get all coupons  
+- `GET /coupons/{id}` → Get coupon by ID  
+- `PUT /coupons/{id}` → Update coupon  
+- `DELETE /coupons/{id}` → Delete coupon  
+
+---
+
+### Applicable Coupons API
+
+**Endpoint:**  
+`POST /coupons/applicable`
+
+**Returns:**
 - All applicable coupons
 - Calculated discount for each coupon
 
 ---
 
-// Apply Coupon API
+### Apply Coupon API
 
-**Endpoint:**
-POST /coupons/apply/{id}
+**Endpoint:**  
+`POST /coupons/apply/{id}`
 
-Returns:
+**Returns:**
 - Cart items
 - Total price
 - Total discount
@@ -95,19 +107,19 @@ Returns:
 
 ---
 
-// Edge Cases Considered
+## 🧠 Edge Cases Considered
 
 - Null checks for coupon parameters
 - Coupon not found handling
-- No discount if conditions not met
+- No discount if conditions are not met
 - Multiple coupons evaluated independently
 - Zero quantity handling
 - Invalid cart returns zero discount
-- Safe division handling in BXGY
+- Safe BXGY calculation
 
 ---
 
-##  Assumptions
+## ⚠ Assumptions
 
 - Only one coupon can be applied at a time
 - Prices are always positive
@@ -118,7 +130,7 @@ Returns:
 
 ---
 
-##  Unimplemented Cases (Due to Time Constraints)
+## ❌ Unimplemented Cases (Due to Time Constraints)
 
 - Category-based coupons
 - Coupon stacking
@@ -129,17 +141,17 @@ Returns:
 - Inventory validation
 - Multiple BXGY product arrays
 - Concurrency handling
-- Database persistence beyond in-memory
+- Persistent database beyond in-memory
 
 ---
 
-##  Future Improvements
+## 🚀 Future Improvements
 
 - Implement Strategy Pattern for better extensibility
 - Add global exception handling
 - Add validation layer
 - Add coupon expiration enforcement
-- Add priority rules between coupons
+- Add coupon priority rules
 - Add unit tests
 - Add caching (Redis)
 - Persist cart data
@@ -147,7 +159,7 @@ Returns:
 
 ---
 
-##  How to Run
+## 🧪 How to Run
 
 ```bash
 mvn clean install

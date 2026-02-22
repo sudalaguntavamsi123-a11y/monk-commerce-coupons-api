@@ -13,24 +13,29 @@ public class Coupon {
     @Enumerated(EnumType.STRING)
     private CouponType type;
 
-    // ================== CART WISE ==================
+    // ===== CART WISE =====
     private Double threshold;
     private Double discount;
 
-    // ================== PRODUCT WISE ==================
+    // ==== PRODUCT WISE ======
     private Long productId;
 
-    // ================== BXGY ==================
+    // ====== BXGY =======
     private Integer buyQuantity;
     private Integer getQuantity;
     private Long getProductId;
 
     private LocalDate expirationDate;
 
-    // ================== GETTERS & SETTERS ==================
+    // ====== GETTERS & SETTERS =======
 
     public Long getId() {
         return id;
+    }
+
+    
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public CouponType getType() {

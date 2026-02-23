@@ -19,23 +19,23 @@ public class CouponService {
         this.repository = repository;
     }
 
-    // ====== CREATE ======
+    // ==== CREATE ======
     public Coupon createCoupon(Coupon coupon) {
         return repository.save(coupon);
     }
 
-    // ======== GET ALL =======
+    // ===== GET ALL =======
     public List<Coupon> getAllCoupons() {
         return repository.findAll();
     }
 
-    // ======= GET BY ID =======
+    // ===== GET BY ID =====
     public Coupon getCoupon(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Coupon not found"));
     }
 
-    // ========= UPDATE =======
+    // ==== UPDATE =======
     public Coupon updateCoupon(Long id, Coupon coupon) {
 
         Coupon existing = getCoupon(id);
@@ -52,12 +52,12 @@ public class CouponService {
         return repository.save(existing);
     }
 
-    // ======= DELETE =======
+    // ===== DELETE =======
     public void deleteCoupon(Long id) {
         repository.deleteById(id);
     }
 
-    // ========= CART-WISE DISCOUNT ========
+    // ====== CART-WISE DISCOUNT ========
     public double calculateCartWiseDiscount(Coupon coupon, Cart cart) {
 
         double total = cart.getItems().stream()
@@ -74,7 +74,7 @@ public class CouponService {
         return 0;
     }
 
-    // ======= PRODUCT-WISE DISCOUNT =====
+    // ===== PRODUCT-WISE DISCOUNT =====
     public double calculateProductWiseDiscount(Coupon coupon, Cart cart) {
 
         double discount = 0;
@@ -94,7 +94,7 @@ public class CouponService {
         return discount;
     }
 
-    // ======= BXGY DISCOUNT ======
+    // ===== BXGY DISCOUNT ======
     public double calculateBxGyDiscount(Coupon coupon, Cart cart) {
 
         if (coupon.getBuyQuantity() == null ||
@@ -124,7 +124,7 @@ public class CouponService {
         return freeQuantity * freeItemPrice;
     }
 
-    // ======== APPLY COUPON =====
+    // ====== APPLY COUPON =====
     public CartResponse applyCoupon(Long couponId, Cart cart) {
 
         Coupon coupon = getCoupon(couponId);

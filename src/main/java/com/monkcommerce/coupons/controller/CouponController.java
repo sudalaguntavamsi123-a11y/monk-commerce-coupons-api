@@ -20,25 +20,25 @@ public class CouponController {
         this.service = service;
     }
 
-    // ================== CREATE ==================
+    // ======= CREATE =======
     @PostMapping
     public Coupon createCoupon(@RequestBody Coupon coupon) {
         return service.createCoupon(coupon);
     }
 
-    // ================== GET ALL ==================
+    // ====== GET ALL =====
     @GetMapping
     public List<Coupon> getAllCoupons() {
         return service.getAllCoupons();
     }
 
-    // ================== GET BY ID ==================
+    // ======= GET BY ID =====
     @GetMapping("/{id}")
     public Coupon getCoupon(@PathVariable Long id) {
         return service.getCoupon(id);
     }
 
-    // ================== UPDATE ==================
+    // === UPDATE ====
     @PutMapping("/{id}")
     public Coupon updateCoupon(
             @PathVariable Long id,
@@ -47,13 +47,13 @@ public class CouponController {
         return service.updateCoupon(id, coupon);
     }
 
-    // ================== DELETE ==================
+    // ==== DELETE ======
     @DeleteMapping("/{id}")
     public void deleteCoupon(@PathVariable Long id) {
         service.deleteCoupon(id);
     }
 
-    // ================== APPLICABLE COUPONS ==================
+    // ===== APPLICABLE COUPONS =======
     @PostMapping("/applicable")
     public List<String> getApplicableCoupons(@RequestBody Cart cart) {
 
@@ -85,7 +85,7 @@ public class CouponController {
         return applicable;
     }
 
-    // ================== APPLY COUPON ==================
+    // ====== APPLY COUPON =======
     @PostMapping("/apply/{id}")
     public CartResponse applyCoupon(
             @PathVariable Long id,
